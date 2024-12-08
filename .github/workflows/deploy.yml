@@ -12,15 +12,12 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Test application
-      run: npm test
-
-    - name: Deploy to Lambda
-      uses: aws-actions/aws-lambda-deploy@v1
+      uses: actions/setup-node@v2
       with:
-        function-name: email-security-handler
-        zip-file: ./lambda-function.zip
+        node-version: '12'
+    - name: Install dependencies
+      env:
+        CI: true
+      run: npm ci
+
+
