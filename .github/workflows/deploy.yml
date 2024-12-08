@@ -1,0 +1,26 @@
+name: Deploy to AWS Lambda
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Test application
+      run: npm test
+
+    - name: Deploy to Lambda
+      uses: aws-actions/aws-lambda-deploy@v1
+      with:
+        function-name: email-security-handler
+        zip-file: ./lambda-function.zip
