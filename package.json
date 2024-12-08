@@ -1,0 +1,21 @@
+{
+  "name": "cyberg",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.146",
+    "@types/lodash": "^4.17.13",
+    "@types/node": "^22.10.1",
+    "@vercel/ncc": "^0.38.3"
+  }
+}
